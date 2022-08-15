@@ -1,4 +1,4 @@
-// Global variable 
+// Global variable declarations
 var cityList = [];
 var cityname;
 
@@ -31,6 +31,7 @@ function initCityList() {
     
     renderCities();
     }
+
 // This function pull the current city into local storage to display the current weather forecast on reload
 function initWeather() {
     var storedWeather = JSON.parse(localStorage.getItem("currentCity"));
@@ -83,7 +84,6 @@ $("#cityInput").keypress(function(e){
         $("#citySearchBtn").click();
     }
 })
-
 
 // This function runs the Open Weather API AJAX call and displays the current city, weather, and 5 day forecast to the DOM
 async function displayWeather() {
@@ -183,3 +183,14 @@ async function displayFiveDayForecast() {
       }
       $("#forecastContainer").html(forecastDiv);
     }
+
+// This function is used to pass the city in the history list to the displayWeather function
+function historyDisplayWeather(){
+    cityname = $(this).attr("data-name");
+    displayWeather();
+    displayFiveDayForecast();
+    console.log(cityname);
+    
+}
+
+$(document).on("click", ".city", historyDisplayWeather);

@@ -1,6 +1,6 @@
-# Weather_App
+# Weather App
 
-An application that get weather info by city .
+A utility application that gets weather info by city .
 
 ## Technology
 
@@ -14,6 +14,7 @@ An application that get weather info by city .
   
 ### Image
 
+<img src="./assets/images/weather_app.png">
 
 
 #### Link
